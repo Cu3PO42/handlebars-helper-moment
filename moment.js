@@ -12,12 +12,12 @@
 /*jshint node:true */
 'use strict';
 module.exports.register = function (Handlebars, options, params) {
-  var moment  = require('moment');
-  var _       = require('lodash');
+  var moment     = require('moment');
+  var _cloneDeep = require('lodash/clonedeep');
 
   Handlebars.registerHelper('moment', function (context, block) {
     if (context && context.hash) {
-      block = _.cloneDeep(context);
+      block = _cloneDeep(context);
       context = undefined;
     }
     var date = moment(context);
@@ -45,7 +45,7 @@ module.exports.register = function (Handlebars, options, params) {
 
   Handlebars.registerHelper('duration', function (context, block) {
     if (context && context.hash) {
-      block = _.cloneDeep(context);
+      block = _cloneDeep(context);
       context = 0;
     }
     var duration = moment.duration(context);
