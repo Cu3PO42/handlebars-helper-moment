@@ -13,7 +13,7 @@
 'use strict';
 module.exports.register = function (Handlebars, options, params) {
   var moment     = require('moment');
-  var _cloneDeep = require('lodash/clonedeep');
+  var _cloneDeep = require('lodash/cloneDeep');
 
   Handlebars.registerHelper('moment', function (context, block) {
     if (context && context.hash) {
